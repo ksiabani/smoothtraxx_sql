@@ -3,7 +3,8 @@
 
 USE librarydb;
 SELECT
-        CONCAT("https://s3-eu-west-1.amazonaws.com/",MID(song.file, 19)) filename
+        -- CONCAT("https://s3-eu-west-1.amazonaws.com/",MID(song.file, 19)) filename
+        song.file
 FROM
         song
         INNER JOIN tag_map ON song.id = tag_map.object_id
